@@ -11,6 +11,11 @@ function cadastrarUsuario() {
     let cidade = document.querySelector('#cidadeInput').value;
     let estado = document.querySelector('#estadoInput').value;
 
+    if (nome === '' || sobrenome === '' || cpf === '' || nascimento === '' || cep === '' || endereco === '' || numero === '' || complemento === '' || cidade === '' || estado === '') {
+        alert("Por favor, preencha todos os campos.");
+        return;
+    }
+
     const usuario = {
         nome: nome,
         sobrenome: sobrenome,
