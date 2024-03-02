@@ -28,6 +28,16 @@ body {
     border-radius: 20px;
     box-shadow: -1px 2px 1px 1px rgba(0, 0, 0, 0.452);
     text-align: center;
+    overflow-x: auto;
+
+}
+
+#tabelaConsulta {
+    background-color: white;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 95%;
 
 }
 
@@ -42,14 +52,6 @@ body {
     line-height: 40px;
 }
 
-#tabelaConsulta {
-    background-color: white;
-    margin: 20px auto;
-    border: 1px solid black;
-    border-collapse: collapse;
-    width: 100%;
-
-}
 
 tbody tr:nth-child(even) {
     background-color: rgba(128, 128, 128, 0.288);
