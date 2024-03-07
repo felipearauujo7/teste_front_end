@@ -1,6 +1,6 @@
-let campos = document.querySelectorAll('.required');
-let spans = document.querySelectorAll('.span-required');
-let regex = /^[a-zA-ZÀ-ÿ\s]+$/;
+const campos = document.querySelectorAll('.required');
+const spans = document.querySelectorAll('.span-required');
+const regex = /^[a-zA-ZÀ-ÿ\s]+$/;
 
 function setError(index) {
     campos[index].style.border = '2px solid red';
@@ -38,16 +38,8 @@ function cpfValidate() {
     }
 }
 
-function cepValidate() {
-    if (campos[3].value.length < 8 || isNaN(campos[3].value)) {
-        setError(3);
-    } else {
-        removeError(3);
-    }
-}
-
 function numeroValidate() {
-    if (campos[4].value.length < '' || isNaN(campos[4].value)) {
+    if (campos[4].value.length === '' || isNaN(campos[4].value)) {
         setError(4);
     } else {
         removeError(4);

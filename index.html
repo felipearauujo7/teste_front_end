@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <script src="validate.js" defer></script>
+    <script src="autocomplete.js" defer></script>
 </head>
 
 <body>
@@ -13,21 +16,69 @@
         <h2>Cadastre-se</h2>
         <input type="text" id="nomeInput" placeholder="Nome" class="required" oninput="nomeValidate()">
         <span class="span-required">Nome deve ter no minimo 3 caracteres e conter apenas letras</span>
+
         <input type="text" id="sobrenomeInput" placeholder="Sobrenome" class="required" oninput="sobrenomeValidate()">
         <span class="span-required">Sobrenome deve ter no minimo 3 caracteres e conter apenas letras</span>
+
         <input type="text" id="cpfInput" placeholder="CPF" maxlength="11" class="required" oninput="cpfValidate()">
         <span class="span-required">Cpf inválido</span>
+
         <input type="text" id="nascimentoInput" placeholder="Data Nascimento">
-        <input type="text" id="cepInput" placeholder="CEP" maxlength="8" class="required" oninput="cepValidate()">
-        <span class="span-required">CEP inválido</span>
-        <input type="text" id="enderecoInput" placeholder="Endereço">
+
+        <input type="text" id="cepInput" placeholder="CEP" maxlength="8" class="required">
+        <span class="span-required">CEP inválido, tente novamente.</span>
+
+        <input type="text" id="bairroInput" placeholder="Bairro" disabled required data-input>
+
+        <input type="text" id="enderecoInput" placeholder="Endereço" disabled required data-input>
+
         <input type="text" id="numeroInput" placeholder="Numero" class="required" oninput="numeroValidate()">
-        <span class="span-required">Digite um número</span>
-        <input type="text" id="complementoInput" placeholder="Complemento">
-        <input type="text" id="cidadeInput" placeholder="Cidade">
-        <input type="text" id="estadoInput" placeholder="Estado">
+        <span class="span-required">Digite um número.</span>
+
+        <input type="text" id="complementoInput" placeholder="Complemento (Opcional)">
+
+        <input type="text" id="cidadeInput" placeholder="Cidade" disabled required data-input>
+
+        <select
+              id="estadoSelect"
+              disabled
+              required
+              data-input
+            >
+              <option selected>Estado</option>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+            </select>
+
         <input type="submit" value="cadastrar" id="cadastrar" onclick="cadastrarUsuario()">
+
         <input type="submit" value="consultar" id="consultar" onclick="exibirUsuariosCadastrados(); return false">
+
     </form>
 
     <div id="consulta" style="display: none;">
@@ -52,10 +103,6 @@
 
     </div>
 
-    <script src="script.js"></script>
-    <script src="validate.js"></script>
-
-    </script>
 
 </body>
 

@@ -64,7 +64,7 @@ td {
     word-wrap: break-word;
 }
 
-input {
+input, #estadoSelect {
     display: block;
     margin: 10px auto;
     width: 90%;
