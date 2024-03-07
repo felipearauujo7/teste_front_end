@@ -93,6 +93,13 @@ input {
     cursor: pointer;
 }
 
+.span-required {
+    display: none;
+    font-size: 12px;
+    color: rgb(226, 13, 13);
+    
+}
+
 @media(max-width: 520px) {
 
     td {
