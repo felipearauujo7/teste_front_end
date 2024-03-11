@@ -31,7 +31,9 @@ function sobrenomeValidate() {
 }
 
 function cpfValidate() {
-    if (campos[2].value.length < 11 || isNaN(campos[2].value)) {
+    const cpfValue = campos[2].value.replace(/\D/g, ''); 
+    
+    if (cpfValue.length !== 11) { 
         setError(2);
     } else {
         removeError(2);
