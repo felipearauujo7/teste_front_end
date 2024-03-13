@@ -1,5 +1,6 @@
 const cpf = document.getElementById('cpfInput');
 const nascimento = document.getElementById('nascimentoInput');
+const buscarCpf = document.querySelector('#buscarCpfInput');
 
 cpf.addEventListener("keypress", () => {
     let cpfLength = cpf.value.length;
@@ -20,4 +21,15 @@ nascimento.addEventListener("keypress", () => {
         nascimento.value += '/'
     }
     
+})
+
+buscarCpf.addEventListener("keypress", () => {
+    let buscarCpfLength = buscarCpf.value.length;
+
+    if (buscarCpfLength === 3 || buscarCpfLength === 7) {
+        buscarCpf.value += '.'
+    }
+    if (buscarCpfLength === 11) {
+        buscarCpf.value += '-'
+    }
 })
